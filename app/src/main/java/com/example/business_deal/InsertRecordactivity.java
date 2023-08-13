@@ -38,6 +38,19 @@ public class InsertRecordactivity extends AppCompatActivity {
                 mycalendar2.set(Calendar.DAY_OF_MONTH,dayOfMonth);
 
                 updatelabel();
+            }
+        };
+        DatePickerDialog.OnDateSetListener dateset2 = new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker view, int year, int month,int dayOfMonth) {
+                mycalendar.set(Calendar.YEAR,year);
+                mycalendar.set(Calendar.MONTH,month);
+                mycalendar.set(Calendar.DAY_OF_MONTH,dayOfMonth);
+
+                mycalendar2.set(Calendar.YEAR,year);
+                mycalendar2.set(Calendar.MONTH,month);
+                mycalendar2.set(Calendar.DAY_OF_MONTH,dayOfMonth);
+
                 updatewithdate();
             }
         };
@@ -48,7 +61,7 @@ public class InsertRecordactivity extends AppCompatActivity {
 
 
         wdate.setOnClickListener(view ->{
-            new DatePickerDialog(InsertRecordactivity.this,dateset,mycalendar2.get(Calendar.YEAR),mycalendar2.get(Calendar.MONTH),mycalendar2.get(Calendar.DATE)).show();
+            new DatePickerDialog(InsertRecordactivity.this,dateset2,mycalendar2.get(Calendar.YEAR),mycalendar2.get(Calendar.MONTH),mycalendar2.get(Calendar.DATE)).show();
         });
 
     }

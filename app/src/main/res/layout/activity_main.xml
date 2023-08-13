@@ -55,18 +55,18 @@
 -->
 
 
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="164dp"
-            android:layout_height="180dp"
-            android:layout_marginLeft="50dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.356"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.033"
-            app:srcCompat="@drawable/business_image_2" />
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="164dp"
+        android:layout_height="180dp"
+        android:layout_marginLeft="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.356"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.033"
+        app:srcCompat="@drawable/business_image_2" />
 
     <TextView
         android:id="@+id/textView3"
@@ -82,27 +82,25 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.512"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.247" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintVertical_bias="0.04" />
 
     <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="220dp"
-        android:layout_marginEnd="20dp"
         android:id="@+id/scrollid"
-        app:layout_constraintVertical_weight="1"
-        android:layout_marginStart="20dp"
-        android:layout_above="@id/signupid">
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/signupid"
+        app:layout_constraintTop_toBottomOf="@+id/textView3"
+        app:layout_constraintVertical_weight="1">
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/emaillayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/emaillayout"
                 app:hintEnabled="false">
 
                 <EditText
@@ -121,12 +119,12 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/passwordlayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/passwordlayout"
-                app:passwordToggleEnabled="true"
+                android:layout_below="@+id/emaillayout"
                 app:hintEnabled="false"
-                android:layout_below="@+id/emaillayout">
+                app:passwordToggleEnabled="true">
 
                 <EditText
                     android:id="@+id/passwordid"
@@ -146,18 +144,18 @@
 
 
             <Button
+                android:id="@+id/loginbtn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/passwordlayout"
-                android:text="Login"
-                android:background="@drawable/custom_edittext"
-                android:textColor="@color/white"
-                android:textStyle="bold"
-                android:textAllCaps="false"
                 android:layout_marginTop="5dp"
+                android:background="@drawable/custom_edittext"
                 android:fontFamily="sans-serif-black"
+                android:text="Login"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
                 android:textSize="18dp"
-                android:id="@+id/loginbtn"
+                android:textStyle="bold"
 
                 />
         </RelativeLayout>
@@ -177,9 +175,11 @@
         android:textSize="20sp"
         android:textStyle="bold"
         android:visibility="visible"
+        app:layout_constraintVertical_bias="1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scrollid" />
 
 
 
