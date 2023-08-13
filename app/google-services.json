@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "763818301704",
+    "project_id": "business-deal-fc596",
+    "storage_bucket": "business-deal-fc596.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:763818301704:android:c112ad746adb909bcaf4bd",
+        "android_client_info": {
+          "package_name": "com.example.business_deal"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "763818301704-oa9euludpqh7q6mmm7steq2nd9ovfona.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCewrdrRy-A3gijr7Q37G3rFy0VkbIC2b8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "763818301704-oa9euludpqh7q6mmm7steq2nd9ovfona.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

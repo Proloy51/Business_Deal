@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_weight="1"
+    android:background="@drawable/signupimage2"
     tools:context=".InsertRecordactivity">
 
 
@@ -83,7 +84,7 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/custom_edittext"
                     android:hint="  Adress"
-                    android:inputType="text"
+                    android:inputType="textMultiLine"
                     android:textColor="@color/black"
                     android:textSize="16sp" />
 
@@ -106,7 +107,7 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/custom_edittext"
                     android:hint="  Mobile no"
-                    android:inputType="text"
+                    android:inputType="number"
                     android:textColor="@color/black"
                     android:textSize="16sp" />
 
@@ -127,9 +128,11 @@
                     android:id="@+id/descid"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="clip_vertical"
                     android:background="@drawable/custom_edittext"
                     android:hint="  Description"
-                    android:inputType="text"
+                    android:inputType="textMultiLine"
+                    android:gravity="left"
                     android:textColor="@color/black"
                     android:textSize="16sp" />
 
@@ -152,7 +155,7 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/custom_edittext"
                     android:hint="  Total weight"
-                    android:inputType="text"
+                    android:inputType="text|number"
                     android:textColor="@color/black"
                     android:textSize="16sp" />
 
@@ -302,7 +305,7 @@
         android:layout_height="wrap_content"
         android:text="Add Record"
         android:textStyle="bold"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="25dp"
         android:fontFamily="sans-serif-black"
         app:layout_constraintBottom_toTopOf="@+id/scrollView2"
