@@ -12,9 +12,6 @@
         android:theme="@style/Theme.Business_Deal"
         tools:targetApi="31">
         <activity
-            android:name=".test"
-            android:exported="false" />
-        <activity
             android:name=".InsertRecordactivity"
             android:exported="false" />
         <activity

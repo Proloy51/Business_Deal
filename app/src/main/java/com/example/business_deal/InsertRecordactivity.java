@@ -13,6 +13,9 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Locale;
@@ -22,6 +25,7 @@ public class InsertRecordactivity extends AppCompatActivity {
     private EditText rdatetext,wdatetext,nametext,fhnametext,adresstext,mobilenotext,descriptiontext,totalweighttext,moneytext,tokennotext;
     private Calendar mycalendar,mycalendar2;
     private Button savebutton;
+    private DatabaseReference databaseReference;
 
     private String name,fhname,adress,mobileno,description,totalweight,money,tokenno,rdate,wdate,reservedate,withdrawdate;
     @Override
@@ -39,6 +43,8 @@ public class InsertRecordactivity extends AppCompatActivity {
         tokennotext = findViewById(R.id.tokenid);
         rdatetext = findViewById(R.id.dateid);
         wdatetext = findViewById(R.id.withid);
+
+        databaseReference = FirebaseDatabase.getInstance().getReference("Record");
 
         savebutton = findViewById(R.id.uploadid);
 
@@ -83,10 +89,6 @@ public class InsertRecordactivity extends AppCompatActivity {
             new DatePickerDialog(InsertRecordactivity.this,dateset2,mycalendar2.get(Calendar.YEAR),mycalendar2.get(Calendar.MONTH),mycalendar2.get(Calendar.DATE)).show();
         });
 
-//        reservedate = rdate.substring(1,(rdate.charAt(' ')+1));
-//        withdrawdate = wdate.substring(1,(wdate.charAt(' ')+1));
-
-
         savebutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -101,7 +103,6 @@ public class InsertRecordactivity extends AppCompatActivity {
                 reservedate = rdatetext.getText().toString().trim();
                 withdrawdate = wdatetext.getText().toString().trim();
 
-
                 if(name.equals("") || fhname.equals("") || adress.equals("") || mobileno.equals("") || description.equals("") || totalweight.equals("") || money.equals(""))
                 {
                     Toast.makeText(getApplicationContext(),"Provide all informations properly",Toast.LENGTH_SHORT).show();
@@ -112,8 +113,24 @@ public class InsertRecordactivity extends AppCompatActivity {
                 }
 
                 else {
-                    Intent intent = new Intent(InsertRecordactivity.this,test.class);
-                    intent.putExtra("c",reservedate);
+
+                    Business_class business_class = new Business_class(name,fhname,adress,mobileno,description,totalweight,money,tokenno,reservedate,withdrawdate);
+                    databaseReference.child(mobileno).setValue(business_class);
+                    Toast.makeText(getApplicationContext(),"Record inserted successfully",Toast.LENGTH_SHORT).show();
+
+                    nametext.setText("");
+                    fhnametext.setText("");
+                    adresstext.setText("");
+                    mobilenotext.setText("");
+                    descriptiontext.setText("");
+                    totalweighttext.setText("");
+                    moneytext.setText("");
+                    tokennotext.setText("");
+                    rdatetext.setText("");
+                    wdatetext.setText("");
+
+                    
+                    Intent intent = new Intent(InsertRecordactivity.this,HomeActivity.class);
                     startActivity(intent);
                 }
             }
