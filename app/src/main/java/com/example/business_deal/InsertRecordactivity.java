@@ -102,12 +102,6 @@ public class InsertRecordactivity extends AppCompatActivity {
                 withdrawdate = wdatetext.getText().toString().trim();
 
 
-                String reservationdate = reservedate.substring(0,(reservedate.charAt(' ')));
-                String withdrawndate = withdrawdate.substring(0,(withdrawdate.charAt(' ')));
-
-                Log.d("InsertRecordactivity",reservationdate);
-                Log.d("InsertRecordactivity",withdrawndate);
-
                 if(name.equals("") || fhname.equals("") || adress.equals("") || mobileno.equals("") || description.equals("") || totalweight.equals("") || money.equals(""))
                 {
                     Toast.makeText(getApplicationContext(),"Provide all informations properly",Toast.LENGTH_SHORT).show();
@@ -119,7 +113,7 @@ public class InsertRecordactivity extends AppCompatActivity {
 
                 else {
                     Intent intent = new Intent(InsertRecordactivity.this,test.class);
-                    intent.putExtra("c",reservationdate);
+                    intent.putExtra("c",reservedate);
                     startActivity(intent);
                 }
             }
@@ -129,14 +123,14 @@ public class InsertRecordactivity extends AppCompatActivity {
 
     public void updatelabel()
     {
-        String myformat = "MM/dd/yyyy EEEE";
+        String myformat = "MM/dd/yyyy";
         SimpleDateFormat dateFormat = new SimpleDateFormat(myformat, Locale.US);
         rdatetext.setText(dateFormat.format(mycalendar.getTime()));
     }
 
     public void updatewithdate()
     {
-        String myformat = "MM/dd/yyyy EEEE";
+        String myformat = "MM/dd/yyyy";
         SimpleDateFormat dateFormat = new SimpleDateFormat(myformat, Locale.US);
         wdatetext.setText(dateFormat.format(mycalendar2.getTime()));
     }
