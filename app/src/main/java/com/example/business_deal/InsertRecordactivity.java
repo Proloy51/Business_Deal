@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -82,29 +83,9 @@ public class InsertRecordactivity extends AppCompatActivity {
             new DatePickerDialog(InsertRecordactivity.this,dateset2,mycalendar2.get(Calendar.YEAR),mycalendar2.get(Calendar.MONTH),mycalendar2.get(Calendar.DATE)).show();
         });
 
+//        reservedate = rdate.substring(1,(rdate.charAt(' ')+1));
+//        withdrawdate = wdate.substring(1,(wdate.charAt(' ')+1));
 
-        for(int i=0; i<rdate.length(); i++)
-        {
-            if(rdate.charAt(i) ==' ')
-            {
-                break;
-            }
-            else{
-                reservedate += rdate.charAt(i);
-            }
-        }
-
-
-        for(int i=0; i<wdate.length(); i++)
-        {
-            if(wdate.charAt(i) ==' ')
-            {
-                break;
-            }
-            else{
-                withdrawdate += wdate.charAt(i);
-            }
-        }
 
         savebutton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -117,18 +98,30 @@ public class InsertRecordactivity extends AppCompatActivity {
                 totalweight = totalweighttext.getText().toString().trim();
                 money = moneytext.getText().toString().trim();
                 tokenno = tokennotext.getText().toString().trim();
+                reservedate = rdatetext.getText().toString().trim();
+                withdrawdate = wdatetext.getText().toString().trim();
 
-                if(name.length()<1 || fhname.length()<1 || adress.length()<1 || mobileno.length()<1 || description.length()<1 || totalweight.length()<1 || money.length()<1 || tokenno.length()<1)
+
+                String reservationdate = reservedate.substring(0,(reservedate.charAt(' ')));
+                String withdrawndate = withdrawdate.substring(0,(withdrawdate.charAt(' ')));
+
+                Log.d("InsertRecordactivity",reservationdate);
+                Log.d("InsertRecordactivity",withdrawndate);
+
+                if(name.equals("") || fhname.equals("") || adress.equals("") || mobileno.equals("") || description.equals("") || totalweight.equals("") || money.equals(""))
                 {
                     Toast.makeText(getApplicationContext(),"Provide all informations properly",Toast.LENGTH_SHORT).show();
                 }
-                if(mobileno.length()!=11 || mobileno.charAt(2)<3)
+                else if(mobileno.length()!=11 || Character.getNumericValue(mobileno.charAt(2))<3)
                 {
                     Toast.makeText(getApplicationContext(),"Enter a valid mobile number",Toast.LENGTH_SHORT).show();
                 }
 
-                Intent intent = new Intent(InsertRecordactivity.this,HomeActivity.class);
-                startActivity(intent);
+                else {
+                    Intent intent = new Intent(InsertRecordactivity.this,test.class);
+                    intent.putExtra("c",reservationdate);
+                    startActivity(intent);
+                }
             }
         });
 

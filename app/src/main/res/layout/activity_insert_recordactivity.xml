@@ -155,7 +155,7 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/custom_edittext"
                     android:hint="  Total weight"
-                    android:inputType="text|number"
+                    android:inputType="text"
                     android:textColor="@color/black"
                     android:textSize="16sp" />
 
@@ -178,7 +178,7 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/custom_edittext"
                     android:hint="  Amount of money"
-                    android:inputType="numberDecimal"
+                    android:inputType="text"
                     android:maxLength="20"
                     android:textColor="@color/black"
                     android:textSize="16sp" />
@@ -284,7 +284,7 @@
         android:layout_width="338dp"
         android:layout_height="45dp"
         android:layout_below="@+id/withdrawid"
-        android:layout_marginTop="5dp"
+        android:layout_marginBottom="16dp"
         android:background="@drawable/custom_edittext"
         android:fontFamily="sans-serif-black"
         android:text="save"
@@ -296,7 +296,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintVertical_bias="1"
         tools:ignore="NotSibling" />
 
     <TextView
