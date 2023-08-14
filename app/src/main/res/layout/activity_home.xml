@@ -27,12 +27,12 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ListView
+        android:id="@+id/listviewid"
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
         android:divider="#ff22"
         android:dividerHeight="5dp"
         android:listSelector="@color/teal_700"
-        android:layout_width="match_parent"
-        android:layout_height="500dp"
-        android:id="@+id/listviewid"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -42,12 +42,13 @@
         android:id="@+id/adddatabtn"
         android:layout_width="113dp"
         android:layout_height="84dp"
+        android:layout_marginTop="31dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.946"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.975"
+        app:layout_constraintTop_toBottomOf="@+id/listviewid"
+        app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/plussign" />
 
 

@@ -41,7 +41,7 @@ public class CustomAdapter extends ArrayAdapter<Business_class> {
         } else {
             query = query.toLowerCase();
             for (Business_class item : business_order) {
-                if ((item.getName().toLowerCase().contains(query)) || (item.getDateofreservation().toLowerCase().contains(query)) ){
+                if ((item.getName().toLowerCase().contains(query)) || (item.getDateofreservation().toLowerCase().contains(query)) || (item.getMobno().toLowerCase().contains(query))){
                     filteredItems.add(item);
                 }
             }
