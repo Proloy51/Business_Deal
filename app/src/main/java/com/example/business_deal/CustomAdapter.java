@@ -45,7 +45,7 @@ public class CustomAdapter extends ArrayAdapter<Business_class> {
         moneytext = view.findViewById(R.id.moneyid);
         tokentext = view.findViewById(R.id.tokenid);
         resertext = view.findViewById(R.id.reserveid);
-        withawtext = view.findViewById(R.id.withdrawid);
+        withawtext = view.findViewById(R.id.withdrawnid);
 
 
         nametext.setText(business_class.getName());

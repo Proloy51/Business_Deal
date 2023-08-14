@@ -10,6 +10,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.ListView;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -24,7 +25,7 @@ import java.util.List;
 
 public class HomeActivity extends AppCompatActivity {
 
-    private ImageButton addbutton;
+    private ImageView addbutton;
     private FirebaseAuth mauth;
     private ListView listView;
     DatabaseReference databaseReference;
@@ -105,7 +106,20 @@ public class HomeActivity extends AppCompatActivity {
                         String withdrawndate = String.valueOf(business_classList.get(position).getDateofwithdrawn());
 
 
-                        Intent intent = new Intent("name",name);
+                        Intent intent = new Intent(HomeActivity.this,edit_delete.class);
+
+                        intent.putExtra("name",name);
+                        intent.putExtra("fhname",fhname);
+                        intent.putExtra("adress",adress);
+                        intent.putExtra("mobileno",mobileno);
+                        intent.putExtra("description",description);
+                        intent.putExtra("totalweight",totalweight);
+                        intent.putExtra("money",money);
+                        intent.putExtra("tokenno",tokenno);
+                        intent.putExtra("reservedate",reservedate);
+                        intent.putExtra("withdrawndate",withdrawndate);
+
+                        startActivity(intent);
                     }
                 });
             }
