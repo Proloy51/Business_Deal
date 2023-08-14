@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_weight="1"
-    android:background="@drawable/background_1"
+    android:background="@drawable/splash2"
     tools:context=".splashactivity">
 
     <TextView
@@ -13,8 +13,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Welcome to the"
-        android:textSize="23dp"
-        android:textColor="@color/design_default_color_error"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
         android:fontFamily="sans-serif-black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -28,8 +29,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Business Deal"
-        android:textSize="30dp"
-        android:textColor="@color/design_default_color_error"
+        android:textSize="32dp"
+        android:textColor="@color/white"
         android:fontFamily="sans-serif-black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
