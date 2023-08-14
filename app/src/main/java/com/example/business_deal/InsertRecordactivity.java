@@ -129,7 +129,7 @@ public class InsertRecordactivity extends AppCompatActivity {
                     rdatetext.setText("");
                     wdatetext.setText("");
 
-                    
+
                     Intent intent = new Intent(InsertRecordactivity.this,HomeActivity.class);
                     startActivity(intent);
                 }
