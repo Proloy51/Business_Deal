@@ -1,11 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
         android:title="Sign out"
-        android:id="@+id/signoutid"
+        android:id="@+id/signoutid">
+    </item>
 
-        >
-
+    <item
+       android:title="Search here"
+        android:id="@+id/searchviewid"
+        app:showAsAction="always"
+        android:icon="@drawable/baseline_search_24"
+        android:iconTint="@color/white"
+        app:actionViewClass="android.widget.SearchView">
     </item>
 </menu>

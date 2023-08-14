@@ -17,7 +17,7 @@
         android:text=" Name : "
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
-        android:textColor="@color/teal_700"
+        android:textColor="@color/purple_700"
         android:textSize="18dp"
         android:fontFamily="sans-serif-black"
         android:textStyle="bold">
@@ -50,7 +50,7 @@
         android:text=" Father's/Husband's name : "
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
-        android:textColor="@color/teal_700"
+        android:textColor="@color/purple_700"
         android:fontFamily="sans-serif-black"
         android:textSize="16dp"
         android:textStyle="bold"></TextView>
@@ -81,7 +81,7 @@
         android:textAlignment="center"
         android:fontFamily="sans-serif-black"
         android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
-        android:textColor="@color/teal_700"
+        android:textColor="@color/purple_700"
         android:textSize="18dp"
         android:textStyle="bold"></TextView>
 
@@ -110,7 +110,7 @@
         android:fontFamily="sans-serif-black"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
-        android:textColor="@color/teal_700"
+        android:textColor="@color/purple_700"
         android:textSize="18dp"
         android:textStyle="bold"></TextView>
 
@@ -140,7 +140,7 @@
         android:fontFamily="sans-serif-black"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
-        android:textColor="@color/teal_700"
+        android:textColor="@color/purple_700"
         android:textSize="18dp"
         android:textStyle="bold"></TextView>
 
@@ -169,7 +169,7 @@
         android:fontFamily="sans-serif-black"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
-        android:textColor="@color/teal_700"
+        android:textColor="@color/purple_700"
         android:textSize="18dp"
         android:textStyle="bold"></TextView>
 
@@ -198,7 +198,7 @@
         android:fontFamily="sans-serif-black"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
-        android:textColor="@color/teal_700"
+        android:textColor="@color/purple_700"
         android:textSize="18dp"
         android:textStyle="bold"></TextView>
 
@@ -228,7 +228,7 @@
         android:textAlignment="center"
         android:fontFamily="sans-serif-black"
         android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
-        android:textColor="@color/teal_700"
+        android:textColor="@color/purple_700"
         android:textSize="18dp"
         android:textStyle="bold"></TextView>
 
@@ -257,7 +257,7 @@
         android:textAlignment="center"
         android:fontFamily="sans-serif-black"
         android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
-        android:textColor="@color/teal_700"
+        android:textColor="@color/purple_700"
         android:textSize="18dp"
         android:textStyle="bold"></TextView>
 
@@ -287,7 +287,7 @@
         android:fontFamily="sans-serif-black"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
-        android:textColor="@color/teal_700"
+        android:textColor="@color/purple_700"
         android:textSize="18dp"
         android:textStyle="bold"></TextView>
 

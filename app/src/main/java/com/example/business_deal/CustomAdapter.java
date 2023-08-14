@@ -10,7 +10,9 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.content.ContextCompat;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class CustomAdapter extends ArrayAdapter<Business_class> {
@@ -18,12 +20,34 @@ public class CustomAdapter extends ArrayAdapter<Business_class> {
     private Activity context;
     private List<Business_class> business_order;
 
+    private List<Business_class> filteredItems=new ArrayList<>();
+
+
+
     public CustomAdapter(Activity context, List<Business_class> business_order) {
         super(context, R.layout.sample, business_order);
         this.context = context;
-        this.business_order = business_order;
+        this.business_order = new ArrayList<>();
+        this.business_order.addAll(business_order);
+        this.filteredItems = business_order;
+        //filteredItems.addAll(business_order);
     }
 
+
+    public void filter(String query) {
+        filteredItems.clear();
+        if (query.trim().isEmpty()) {
+            filteredItems.addAll(business_order);
+        } else {
+            query = query.toLowerCase();
+            for (Business_class item : business_order) {
+                if ((item.getName().toLowerCase().contains(query)) || (item.getDateofreservation().toLowerCase().contains(query)) ){
+                    filteredItems.add(item);
+                }
+            }
+        }
+        notifyDataSetChanged();
+    }
 
     @NonNull
     @Override
@@ -33,7 +57,7 @@ public class CustomAdapter extends ArrayAdapter<Business_class> {
         View view = layoutInflater.inflate(R.layout.sample,null,true);
 
 
-        Business_class business_class = business_order.get(position);
+        Business_class business_class = filteredItems.get(position);
 
         TextView nametext,fhnametext,adresstext,mobiletext,descriptiontext,totalweighttext,moneytext,tokentext,resertext,withawtext;
         nametext = view.findViewById(R.id.nameid);
@@ -60,6 +84,15 @@ public class CustomAdapter extends ArrayAdapter<Business_class> {
         withawtext.setText(business_class.getDateofwithdrawn());
 
 
+        String str = business_class.getDateofwithdrawn().toString().trim();
+
+        if(str.length() > 5)
+        {
+            view.setBackgroundColor(ContextCompat.getColor(context, R.color.tomato));
+        }
+        else{
+            view.setBackgroundColor(0);
+        }
         return view;
     }
 }

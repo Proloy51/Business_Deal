@@ -6,12 +6,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.SearchView;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -58,7 +60,28 @@ public class HomeActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
 
-        getMenuInflater().inflate(R.menu.menu_layout,menu);
+        MenuInflater menuInflater = getMenuInflater();
+        menuInflater.inflate(R.menu.menu_layout,menu);
+
+        MenuItem menuItem = menu.findItem(R.id.searchviewid);
+
+        SearchView searchView = (SearchView) menuItem.getActionView();
+
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+
+                customAdapter.filter(newText);
+                return false;
+            }
+        });
+
+     //   getMenuInflater().inflate(R.menu.menu_layout,menu);
         return super.onCreateOptionsMenu(menu);
     }
 
@@ -88,6 +111,7 @@ public class HomeActivity extends AppCompatActivity {
                    business_classList.add(business_class);
                 }
 
+                customAdapter = new CustomAdapter(HomeActivity.this,business_classList);
                 listView.setAdapter(customAdapter);
 
                 listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -131,4 +155,5 @@ public class HomeActivity extends AppCompatActivity {
         });
         super.onStart();
     }
+
 }
