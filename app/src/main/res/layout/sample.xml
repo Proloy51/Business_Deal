@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp"
+    android:background="@drawable/homeback"
+    android:layout_weight="1"
+    android:layout_height="match_parent">
+
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="100dp"
+        android:gravity="center"
+        android:text=" Name : "
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+        android:textColor="@color/teal_700"
+        android:textSize="18dp"
+        android:fontFamily="sans-serif-black"
+        android:textStyle="bold">
+    </TextView>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Proloy Karmakar"
+        android:paddingLeft="100dp"
+        android:paddingTop="1dp"
+        android:fontFamily="sans-serif-black"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="15dp"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+        android:id="@+id/nameid">
+    </TextView>
+
+
+
+
+    <TextView
+        android:paddingTop="50dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="100dp"
+        android:gravity="center"
+        android:text=" Father's/Husband's name : "
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+        android:textColor="@color/teal_700"
+        android:fontFamily="sans-serif-black"
+        android:textSize="16dp"
+        android:textStyle="bold"></TextView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Radhesham Karmakar"
+        android:paddingLeft="205dp"
+        android:paddingTop="52dp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif-black"
+        android:textSize="15dp"
+        android:id="@+id/fhnameid"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Body2">
+    </TextView>
+
+
+
+    <TextView
+        android:paddingTop="100dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="100dp"
+        android:gravity="center"
+        android:text="Adress : "
+        android:textAlignment="center"
+        android:fontFamily="sans-serif-black"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+        android:textColor="@color/teal_700"
+        android:textSize="18dp"
+        android:textStyle="bold"></TextView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Goila"
+        android:paddingLeft="100dp"
+        android:paddingTop="100dp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif-black"
+        android:textSize="15dp"
+        android:id="@+id/adressid"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Body2">
+    </TextView>
+
+
+    <TextView
+        android:paddingTop="150dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="100dp"
+        android:gravity="center"
+        android:text=" Mobile no : "
+        android:fontFamily="sans-serif-black"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+        android:textColor="@color/teal_700"
+        android:textSize="18dp"
+        android:textStyle="bold"></TextView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="01300208097"
+        android:paddingLeft="120dp"
+        android:paddingTop="150dp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif-black"
+        android:textSize="15dp"
+        android:id="@+id/mobileid"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Body2">
+    </TextView>
+
+
+
+    <TextView
+        android:paddingTop="200dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="100dp"
+        android:gravity="center"
+        android:text="Description : "
+        android:fontFamily="sans-serif-black"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+        android:textColor="@color/teal_700"
+        android:textSize="18dp"
+        android:textStyle="bold"></TextView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1 pcs plain chain."
+        android:paddingLeft="120dp"
+        android:paddingTop="200dp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="15dp"
+        android:fontFamily="sans-serif-black"
+        android:id="@+id/descriptionid"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Body2">
+    </TextView>
+
+
+    <TextView
+        android:paddingTop="250dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="100dp"
+        android:gravity="center"
+        android:text="Total weight : "
+        android:fontFamily="sans-serif-black"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+        android:textColor="@color/teal_700"
+        android:textSize="18dp"
+        android:textStyle="bold"></TextView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1 vori"
+        android:paddingLeft="120dp"
+        android:paddingTop="250dp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif-black"
+        android:textSize="15dp"
+        android:id="@+id/totalweightid"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Body2">
+    </TextView>
+
+
+    <TextView
+        android:paddingTop="300dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="100dp"
+        android:gravity="center"
+        android:text="Amount of money : "
+        android:fontFamily="sans-serif-black"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+        android:textColor="@color/teal_700"
+        android:textSize="18dp"
+        android:textStyle="bold"></TextView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1 vori"
+        android:paddingLeft="180dp"
+        android:paddingTop="300dp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="15dp"
+        android:fontFamily="sans-serif-black"
+        android:id="@+id/moneyid"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Body2">
+    </TextView>
+
+
+
+    <TextView
+        android:paddingTop="350dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="100dp"
+        android:gravity="center"
+        android:text="Token no : "
+        android:textAlignment="center"
+        android:fontFamily="sans-serif-black"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+        android:textColor="@color/teal_700"
+        android:textSize="18dp"
+        android:textStyle="bold"></TextView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1 vori"
+        android:paddingLeft="120dp"
+        android:paddingTop="350dp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif-black"
+        android:textSize="15dp"
+        android:id="@+id/tokenid"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Body2">
+    </TextView>
+
+
+    <TextView
+        android:paddingTop="400dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="100dp"
+        android:gravity="center"
+        android:text="Date of reservation : "
+        android:textAlignment="center"
+        android:fontFamily="sans-serif-black"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+        android:textColor="@color/teal_700"
+        android:textSize="18dp"
+        android:textStyle="bold"></TextView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="05/05/2023"
+        android:paddingLeft="180dp"
+        android:paddingTop="400dp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="15dp"
+        android:fontFamily="sans-serif-black"
+        android:id="@+id/reserveid"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Body2">
+    </TextView>
+
+
+
+    <TextView
+        android:paddingTop="450dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="100dp"
+        android:gravity="center"
+        android:text="Date of reservation : "
+        android:fontFamily="sans-serif-black"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+        android:textColor="@color/teal_700"
+        android:textSize="18dp"
+        android:textStyle="bold"></TextView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="05/05/2023"
+        android:paddingLeft="180dp"
+        android:paddingTop="450dp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif-black"
+        android:textSize="15dp"
+        android:id="@+id/withdrawid"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Body2">
+    </TextView>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
