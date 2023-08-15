@@ -30,6 +30,8 @@ public class SignupActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
 
+        this.setTitle("Sign up");
+
         emailtext = findViewById(R.id.emailid);
         passwordtext = findViewById(R.id.passwordid);
         conpasstext = findViewById(R.id.confirmpasswordid);

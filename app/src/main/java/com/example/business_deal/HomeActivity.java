@@ -38,6 +38,8 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
+        this.setTitle("Home page");
+
         addbutton = findViewById(R.id.adddatabtn);
         listView = findViewById(R.id.listviewid);
         mauth = FirebaseAuth.getInstance();

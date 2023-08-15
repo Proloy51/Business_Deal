@@ -33,6 +33,8 @@ public class InsertRecordactivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_insert_recordactivity);
 
+        this.setTitle("Add record");
+
         nametext = findViewById(R.id.nameid);
         fhnametext = findViewById(R.id.fatorhusid);
         adresstext = findViewById(R.id.adressid);

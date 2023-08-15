@@ -30,6 +30,8 @@ public class Editactivityy extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_editactivityy);
 
+        this.setTitle("Edit Record");
+
 
         databaseReference = FirebaseDatabase.getInstance().getReference("Record");
         editbutton = findViewById(R.id.editid);

@@ -31,6 +31,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        this.setTitle("Login or Sign up");
+
         signuptext = findViewById(R.id.signupid);
         emailtext = findViewById(R.id.emailid);
         passwordtext = findViewById(R.id.passwordid);

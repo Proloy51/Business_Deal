@@ -36,6 +36,8 @@ public class edit_delete extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_delete);
 
+        this.setTitle("Edit or Delete");
+
 
         nametext = findViewById(R.id.nameid);
         fhnametext = findViewById(R.id.fhnameid);
