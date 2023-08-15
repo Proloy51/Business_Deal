@@ -105,7 +105,7 @@ public class InsertRecordactivity extends AppCompatActivity {
                 reservedate = rdatetext.getText().toString().trim();
                 withdrawdate = wdatetext.getText().toString().trim();
 
-                if(name.equals("") || fhname.equals("") || adress.equals("") || mobileno.equals("") || description.equals("") || totalweight.equals("") || money.equals(""))
+                if(name.equals("") || adress.equals("") || mobileno.equals("") || description.equals("") || totalweight.equals("") || money.equals(""))
                 {
                     Toast.makeText(getApplicationContext(),"Provide all informations properly",Toast.LENGTH_SHORT).show();
                 }

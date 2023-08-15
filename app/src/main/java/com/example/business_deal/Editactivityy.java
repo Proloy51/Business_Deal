@@ -131,7 +131,7 @@ public class Editactivityy extends AppCompatActivity {
                 reservedate = reservetext.getText().toString().trim();
                 withdrawdate = withdrawtext.getText().toString().trim();
 
-                if(name.equals("") || fhname.equals("") || adress.equals("") || mobileno.equals("") || description.equals("") || totalweight.equals("") || money.equals(""))
+                if(name.equals("") || adress.equals("") || mobileno.equals("") || description.equals("") || totalweight.equals("") || money.equals(""))
                 {
                     Toast.makeText(getApplicationContext(),"Provide all informations properly",Toast.LENGTH_SHORT).show();
                 }
