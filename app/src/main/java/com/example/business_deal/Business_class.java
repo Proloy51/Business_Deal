@@ -2,13 +2,13 @@ package com.example.business_deal;
 
 public class Business_class {
 
-    private String name,fhname,adress,mobno,description,totalweight,money,tokenno,dateofreservation,dateofwithdrawn;
+    private String name,fhname,adress,mobno,description,totalweight,money,tokenno,dateofreservation,dateofwithdrawn,email;
 
     public Business_class()
     {
 
     }
-    public Business_class(String name, String fhname, String adress, String mobno, String description, String totalweight, String money, String tokenno, String dateofreservation, String dateofwithdrawn) {
+    public Business_class(String name, String fhname, String adress, String mobno, String description, String totalweight, String money, String tokenno, String dateofreservation, String dateofwithdrawn,String email) {
         this.name = name;
         this.fhname = fhname;
         this.adress = adress;
@@ -19,6 +19,7 @@ public class Business_class {
         this.tokenno = tokenno;
         this.dateofreservation = dateofreservation;
         this.dateofwithdrawn = dateofwithdrawn;
+        this.email = email;
     }
 
     public String getName() {
@@ -99,5 +100,13 @@ public class Business_class {
 
     public void setDateofwithdrawn(String dateofwithdrawn) {
         this.dateofwithdrawn = dateofwithdrawn;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 }

@@ -22,6 +22,7 @@ import java.util.Locale;
 
 public class InsertRecordactivity extends AppCompatActivity {
 
+    private String email;
     private EditText rdatetext,wdatetext,nametext,fhnametext,adresstext,mobilenotext,descriptiontext,totalweighttext,moneytext,tokennotext;
     private Calendar mycalendar,mycalendar2;
     private Button savebutton;
@@ -35,6 +36,11 @@ public class InsertRecordactivity extends AppCompatActivity {
 
         this.setTitle("Add record");
 
+        Bundle bundle = getIntent().getExtras();
+        if(bundle != null)
+        {
+            email = bundle.getString("Email").toString().trim();
+        }
         nametext = findViewById(R.id.nameid);
         fhnametext = findViewById(R.id.fatorhusid);
         adresstext = findViewById(R.id.adressid);
@@ -116,7 +122,7 @@ public class InsertRecordactivity extends AppCompatActivity {
 
                 else {
 
-                    Business_class business_class = new Business_class(name,fhname,adress,mobileno,description,totalweight,money,tokenno,reservedate,withdrawdate);
+                    Business_class business_class = new Business_class(name,fhname,adress,mobileno,description,totalweight,money,tokenno,reservedate,withdrawdate,email);
                     databaseReference.child(mobileno).setValue(business_class);
                     Toast.makeText(getApplicationContext(),"Record inserted successfully",Toast.LENGTH_SHORT).show();
 

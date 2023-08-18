@@ -84,6 +84,7 @@ public class MainActivity extends AppCompatActivity {
                             progressBar.setVisibility(View.GONE);
                             Toast.makeText(getApplicationContext(),"Login successful",Toast.LENGTH_SHORT).show();
                             Intent intent = new Intent(MainActivity.this,HomeActivity.class);
+                            intent.putExtra("Email",email);
                             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                             startActivity(intent);
                         }

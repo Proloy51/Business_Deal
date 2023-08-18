@@ -23,7 +23,7 @@ public class Editactivityy extends AppCompatActivity {
     private Button editbutton;
     private Calendar mycalendar,mycalendar2;
     DatabaseReference databaseReference;
-    private String name,fhname,adress,mobileno,description,totalweight,money,tokenno,rdate,wdate,reservedate,withdrawdate;
+    private String name,fhname,adress,mobileno,description,totalweight,money,tokenno,rdate,wdate,reservedate,withdrawdate,email;
     private EditText reservetext,withdrawtext,nametext,fhnametext,adresstext,mobilenotext,descriptiontext,totalweighttext,moneytext,tokennotext;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -142,7 +142,7 @@ public class Editactivityy extends AppCompatActivity {
 
                 else {
 
-                    Business_class business_class = new Business_class(name,fhname,adress,mobileno,description,totalweight,money,tokenno,reservedate,withdrawdate);
+                    Business_class business_class = new Business_class(name,fhname,adress,mobileno,description,totalweight,money,tokenno,reservedate,withdrawdate,email);
                     databaseReference.child(mobileno).setValue(business_class);
                     Toast.makeText(getApplicationContext(),"Record edited successfully",Toast.LENGTH_SHORT).show();
 

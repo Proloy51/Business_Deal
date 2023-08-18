@@ -31,6 +31,7 @@ public class HomeActivity extends AppCompatActivity {
 
     private ImageView addbutton;
     private FirebaseAuth mauth;
+    private String email;
     private ListView listView;
     DatabaseReference databaseReference;
     private List<Business_class> business_classList;
@@ -41,6 +42,12 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
 
         this.setTitle("Home page");
+
+        Bundle bundle = getIntent().getExtras();
+        if(bundle != null)
+        {
+            email = bundle.getString("Email").toString().trim();
+        }
 
         addbutton = findViewById(R.id.adddatabtn);
         listView = findViewById(R.id.listviewid);
@@ -56,6 +63,7 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(HomeActivity.this,InsertRecordactivity.class);
+                intent.putExtra("Email",email);
                 startActivity(intent);
             }
         });
@@ -113,7 +121,9 @@ public class HomeActivity extends AppCompatActivity {
                 for(DataSnapshot dataSnapshot1 : snapshot.getChildren())
                 {
                    Business_class business_class = dataSnapshot1.getValue(Business_class.class);
-                   business_classList.add(business_class);
+                   if(business_class.getEmail().equals(email)){
+                       business_classList.add(business_class);
+                   }
                 }
 
                 customAdapter = new CustomAdapter(HomeActivity.this,business_classList);
