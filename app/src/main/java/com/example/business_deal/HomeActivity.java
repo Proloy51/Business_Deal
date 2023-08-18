@@ -1,8 +1,10 @@
 package com.example.business_deal;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -43,6 +45,7 @@ public class HomeActivity extends AppCompatActivity {
         addbutton = findViewById(R.id.adddatabtn);
         listView = findViewById(R.id.listviewid);
         mauth = FirebaseAuth.getInstance();
+
 
         databaseReference = FirebaseDatabase.getInstance().getReference("Record");
 
@@ -158,4 +161,40 @@ public class HomeActivity extends AppCompatActivity {
         super.onStart();
     }
 
+    @Override
+    public void onBackPressed() {
+
+
+        AlertDialog.Builder alertdialogbuilder;
+
+        alertdialogbuilder = new AlertDialog.Builder(HomeActivity.this);
+
+        alertdialogbuilder.setTitle("Alert title");
+        alertdialogbuilder.setMessage("Do you want to exit ?");
+        alertdialogbuilder.setIcon(R.drawable.question1);
+
+        alertdialogbuilder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                finish();
+            }
+        });
+
+        alertdialogbuilder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.cancel();
+            }
+        });
+
+        alertdialogbuilder.setNeutralButton("Cancel", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.cancel();
+            }
+        });
+
+        AlertDialog alertDialog = alertdialogbuilder.create();
+        alertDialog.show();
+    }
 }

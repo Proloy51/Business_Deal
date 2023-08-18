@@ -120,13 +120,11 @@
     <Button
         android:id="@+id/registerbtn"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:layout_alignParentTop="true"
-        android:layout_alignParentBottom="true"
         android:layout_marginLeft="25dp"
-        android:layout_marginTop="435dp"
+        android:layout_marginTop="470dp"
         android:layout_marginRight="25dp"
-        android:layout_marginBottom="248dp"
         android:background="@drawable/custom_edittext"
         android:text="Register"
         android:textColor="@color/white" />

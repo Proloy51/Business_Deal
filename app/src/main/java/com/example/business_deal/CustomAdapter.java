@@ -56,7 +56,6 @@ public class CustomAdapter extends ArrayAdapter<Business_class> {
         LayoutInflater layoutInflater = context.getLayoutInflater();
         View view = layoutInflater.inflate(R.layout.sample,null,true);
 
-
         Business_class business_class = filteredItems.get(position);
 
         TextView nametext,fhnametext,adresstext,mobiletext,descriptiontext,totalweighttext,moneytext,tokentext,resertext,withawtext;
