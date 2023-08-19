@@ -58,10 +58,10 @@ public class CustomAdapter extends ArrayAdapter<Business_class> {
 
         Business_class business_class = filteredItems.get(position);
 
-        TextView nametext,fhnametext,adresstext,mobiletext,descriptiontext,totalweighttext,moneytext,tokentext,resertext,withawtext;
+        TextView emailtext,nametext,fhnametext,adresstext,mobiletext,descriptiontext,totalweighttext,moneytext,tokentext,resertext,withawtext;
         nametext = view.findViewById(R.id.nameid);
         fhnametext = view.findViewById(R.id.fhnameid);
-        adresstext = view.findViewById(R.id.adressid);;
+        adresstext = view.findViewById(R.id.adressid);
         mobiletext = view.findViewById(R.id.mobileid);
         descriptiontext = view.findViewById(R.id.descriptionid);
         totalweighttext = view.findViewById(R.id.totalweightid);
@@ -69,6 +69,8 @@ public class CustomAdapter extends ArrayAdapter<Business_class> {
         tokentext = view.findViewById(R.id.tokenid);
         resertext = view.findViewById(R.id.reserveid);
         withawtext = view.findViewById(R.id.withdrawnid);
+       // emailtext = view.findViewById(R.id.emailid);
+
 
 
         nametext.setText(business_class.getName());
@@ -81,6 +83,8 @@ public class CustomAdapter extends ArrayAdapter<Business_class> {
         tokentext.setText(business_class.getTokenno());
         resertext.setText(business_class.getDateofreservation());
         withawtext.setText(business_class.getDateofwithdrawn());
+      //  emailtext.setText(business_class.getEmail());
+
 
 
         String str = business_class.getDateofwithdrawn().toString().trim();

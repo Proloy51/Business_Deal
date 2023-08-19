@@ -25,7 +25,7 @@ import com.google.firebase.database.FirebaseDatabase;
 public class edit_delete extends AppCompatActivity {
 
 
-    private String name,fhname,adress,mobileno,description,totalweight,money,tokenno,reservedate,withdrawndate;
+    private String name,fhname,adress,mobileno,description,totalweight,money,tokenno,reservedate,withdrawndate,email;
     private TextView nametext,fhnametext,adresstext,mobilenotext,descriptiontext,totalweighttext,moneytext,tokennotext,reservetext,withdrawntext;
     private ImageView edit,delete;
     DatabaseReference databaseReference;
@@ -55,6 +55,8 @@ public class edit_delete extends AppCompatActivity {
 
         Bundle bundle = getIntent().getExtras();
         if(bundle != null) {
+
+            email = bundle.get("Email").toString().trim();
             name = bundle.getString("name").toString().trim();
             fhname = bundle.getString("fhname").toString().trim();
             adress = bundle.getString("adress").toString().trim();
@@ -84,6 +86,8 @@ public class edit_delete extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     Intent intent = new Intent(edit_delete.this,Editactivityy.class);
+
+                    intent.putExtra("Email",email);
                     intent.putExtra("name",name);
                     intent.putExtra("fhname",fhname);
                     intent.putExtra("adress",adress);

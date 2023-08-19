@@ -1,5 +1,7 @@
 package com.example.business_deal;
 
+import static android.app.ProgressDialog.show;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,6 +18,8 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.SearchView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -43,11 +47,13 @@ public class HomeActivity extends AppCompatActivity {
 
         this.setTitle("Home page");
 
+
         Bundle bundle = getIntent().getExtras();
         if(bundle != null)
         {
             email = bundle.getString("Email").toString().trim();
         }
+
 
         addbutton = findViewById(R.id.adddatabtn);
         listView = findViewById(R.id.listviewid);
@@ -117,17 +123,28 @@ public class HomeActivity extends AppCompatActivity {
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                business_classList.clear();
+                 business_classList.clear();
                 for(DataSnapshot dataSnapshot1 : snapshot.getChildren())
                 {
                    Business_class business_class = dataSnapshot1.getValue(Business_class.class);
-                   if(business_class.getEmail().equals(email)){
+
+                   if(business_class == null)
+                   {
+                       continue;
+                   }
+                   if (email.equals(business_class.getEmail())) {
                        business_classList.add(business_class);
                    }
+
                 }
 
                 customAdapter = new CustomAdapter(HomeActivity.this,business_classList);
                 listView.setAdapter(customAdapter);
+
+                if(listView.getChildCount() == 0)
+                {
+                   Toast.makeText(getApplicationContext(),"No available records",Toast.LENGTH_SHORT).show();
+                }
 
                 listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                     @Override
@@ -146,6 +163,9 @@ public class HomeActivity extends AppCompatActivity {
 
 
                         Intent intent = new Intent(HomeActivity.this,edit_delete.class);
+
+
+                        intent.putExtra("Email",email);
 
                         intent.putExtra("name",name);
                         intent.putExtra("fhname",fhname);
