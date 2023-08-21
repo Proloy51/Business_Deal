@@ -5,6 +5,7 @@ import static com.example.business_deal.R.id.reserveid;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -25,9 +26,25 @@ import com.google.firebase.database.FirebaseDatabase;
 public class edit_delete extends AppCompatActivity {
 
 
+
+    private static final int UNDO_TIMEOUT_MS = 5000; // 5 seconds
+
+    private Handler undoHandler = new Handler();
+    private Runnable undoRunnable = new Runnable() {
+        @Override
+        public void run() {
+            Intent intent = new Intent(edit_delete.this,HomeActivity.class);
+            startActivity(intent);
+        }
+    };
+
+
     private String name,fhname,adress,mobileno,description,totalweight,money,tokenno,reservedate,withdrawndate,email;
+
+    private String name2,fhname2,adress2,mobileno2,description2,totalweight2,money2,tokenno2,reservedate2,withdrawndate2,email2;
     private TextView nametext,fhnametext,adresstext,mobilenotext,descriptiontext,totalweighttext,moneytext,tokennotext,reservetext,withdrawntext;
     private ImageView edit,delete;
+    private Button undobutton;
     DatabaseReference databaseReference;
 
     @SuppressLint("MissingInflatedId")
@@ -38,6 +55,8 @@ public class edit_delete extends AppCompatActivity {
 
         this.setTitle("Edit or Delete");
 
+
+        undobutton = findViewById(R.id.undobutton);
 
         nametext = findViewById(R.id.nameid);
         fhnametext = findViewById(R.id.fhnameid);
@@ -67,6 +86,20 @@ public class edit_delete extends AppCompatActivity {
             tokenno = bundle.getString("tokenno").toString().trim();
             reservedate = bundle.getString("reservedate").toString().trim();
             withdrawndate = bundle.getString("withdrawndate").toString().trim();
+
+
+            name2 = name;
+            adress2 = adress;
+            fhname2 = fhname;
+            mobileno2 = mobileno;
+            description2 = description;
+            totalweight2 = totalweight;
+            tokenno2 = tokenno;
+            money2 = money;
+            email2 = email;
+            reservedate2 = reservedate;
+            withdrawndate2 = withdrawndate;
+
 
         }
 
@@ -109,6 +142,21 @@ public class edit_delete extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                showundobutton();
+
+                undobutton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+
+                        Business_class business_class = new Business_class(name2,fhname2,adress2,mobileno2,description2,totalweight2,money2,tokenno2,reservedate2,withdrawndate2,email2);
+                        databaseReference.child(mobileno).setValue(business_class);
+                        databaseReference.child(mobileno).child("email").setValue(email);
+                        undoHandler.postDelayed(undoRunnable, UNDO_TIMEOUT_MS);
+
+                        hideundobutton();
+                    }
+                });
+
                 databaseReference = FirebaseDatabase.getInstance().getReference("Record");
                 databaseReference.child(mobileno)
                         .removeValue()
@@ -132,5 +180,25 @@ public class edit_delete extends AppCompatActivity {
             }
         });
 
+    }
+
+    public void showundobutton()
+    {
+        Button undoButton = findViewById(R.id.undobutton);
+        undoButton.setVisibility(View.GONE);
+        undoHandler.removeCallbacks(undoRunnable);
+    }
+
+    public void hideundobutton()
+    {
+        Button undoButton = findViewById(R.id.undobutton);
+        undoButton.setVisibility(View.GONE);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+
+        undoHandler.removeCallbacks(undoRunnable);
     }
 }

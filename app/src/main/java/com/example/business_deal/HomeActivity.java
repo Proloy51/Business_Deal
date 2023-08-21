@@ -14,6 +14,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -46,7 +47,6 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
 
         this.setTitle("Home page");
-
 
         Bundle bundle = getIntent().getExtras();
         if(bundle != null)
@@ -141,11 +141,6 @@ public class HomeActivity extends AppCompatActivity {
                 customAdapter = new CustomAdapter(HomeActivity.this,business_classList);
                 listView.setAdapter(customAdapter);
 
-                if(listView.getChildCount() == 0)
-                {
-                   Toast.makeText(getApplicationContext(),"No available records",Toast.LENGTH_SHORT).show();
-                }
-
                 listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                     @Override
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -182,6 +177,8 @@ public class HomeActivity extends AppCompatActivity {
                     }
                 });
             }
+
+
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
@@ -227,4 +224,5 @@ public class HomeActivity extends AppCompatActivity {
         AlertDialog alertDialog = alertdialogbuilder.create();
         alertDialog.show();
     }
+
 }
